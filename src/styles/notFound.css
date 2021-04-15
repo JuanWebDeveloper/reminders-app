@@ -1,0 +1,61 @@
+.notFound {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.notFound .notFound-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notFound .notFound-container img {
+  width: 300px;
+  height: 300px;
+}
+
+.notFound .notFound-container .notFound-text h2 {
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0;
+  background: linear-gradient(
+    150deg,
+    #29bbff 0%,
+    #55ddff 5%,
+    #3362fd 45%,
+    #60ffd7 60%,
+    #28deeb 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.notFound .notFound-container .notFound-text h3 {
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .notFound .notFound-container img {
+    width: 90%;
+    height: 70%;
+  }
+
+  .notFound .notFound-container .notFound-text h2 {
+    padding-left: 10px;
+  }
+
+  .notFound .notFound-container .notFound-text h3 {
+    padding-left: 10px;
+  }
+}

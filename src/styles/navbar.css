@@ -1,0 +1,72 @@
+.navigation {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.navigation .logo div {
+  display: flex;
+  width: 80px;
+  height: 100%;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.navigation .logo div img {
+  width: 100%;
+  height: 50px;
+}
+
+.navigation .logo:hover {
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.navigation .sOl {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 60px;
+  padding-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.navigation .sOl i {
+  padding-left: 5px;
+  color: #db4a39;
+}
+
+.navigation .sOl:hover {
+  opacity: 0.7;
+}
+
+.containerLogout {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.containerLogout img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .containerLogout {
+    width: 100px;
+    margin-right: 20px;
+  }
+
+  .containerLogout img {
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,62 @@
+.titleNameUser {
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  padding-bottom: 20px;
+  background: linear-gradient(
+    150deg,
+    #29bbff 0%,
+    #55ddff 5%,
+    #3362fd 45%,
+    #60ffd7 60%,
+    #28deeb 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.linkContainer {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 7px 6px 8px 6px rgba(2, 2, 2, 0.4);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.linkContainer h3 {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.linkContainer h4 {
+  font-weight: 400;
+  color: #999;
+}
+
+.linkContainer button {
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.linkContainer button i {
+  padding-left: 5px;
+}
+
+.linkContainer button:hover {
+  opacity: 0.5;
+}
+
+h3 {
+  font-size: 30px;
+  color: #b10012;
+}
+
+.alertText {
+  font-size: 20px;
+  color: #fff;
+}
