@@ -7,10 +7,7 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       {props.session ? (
-        <ActiveSessionMenu
-          handleLogout={props.handleLogout}
-          userDate={props.userDate}
-        />
+        <ActiveSessionMenu handleLogout={props.handleLogout} />
       ) : (
         <ClosedSessionMenu handleLogin={props.handleLogin} />
       )}

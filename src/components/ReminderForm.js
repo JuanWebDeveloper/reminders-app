@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 
 import firebase from "../firebase";
 import "firebase/firestore";
+import "firebase/auth";
 
 import "../styles/reminderForm.css";
+const auth = firebase.auth();
 
 const ReminderForm = (props) => {
   const initialStateValues = {
@@ -12,7 +14,8 @@ const ReminderForm = (props) => {
   };
 
   const [values, setValues] = useState(initialStateValues);
-  const query = firebase.firestore().collection(props.userDate.id);
+  const { uid } = auth.currentUser;
+  const query = firebase.firestore().collection(uid);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

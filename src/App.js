@@ -12,11 +12,6 @@ import Reminders from "./components/Reminders";
 import NotFound from "./components/NotFound";
 
 const auth = firebase.auth();
-const userDate = {
-  id: "",
-  name: "",
-  photo: "",
-};
 
 function App() {
   const [sessionStarted, setSessionStarted] = useState(false);
@@ -34,10 +29,6 @@ function App() {
   auth.onAuthStateChanged((response) => {
     if (response) {
       setSessionStarted(response);
-      const { uid, photoURL, displayName } = auth.currentUser;
-      userDate.id = uid;
-      userDate.name = displayName;
-      userDate.photo = photoURL;
     }
   });
 
@@ -47,12 +38,11 @@ function App() {
         session={sessionStarted}
         handleLogin={handleLogin}
         handleLogout={handleLogout}
-        userDate={userDate}
       >
         <Switch>
           {sessionStarted ? (
             <Route exact path="/">
-              <Reminders userDate={userDate} />
+              <Reminders />
               <ToastContainer />
             </Route>
           ) : (

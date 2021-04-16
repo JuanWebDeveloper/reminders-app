@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import firebase from "../firebase";
 import "firebase/firestore";
+import "firebase/auth";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/dist/sweetalert2.css";
 
@@ -9,11 +10,13 @@ import { toast } from "react-toastify";
 
 import "../styles/reminder.css";
 import ReminderForm from "./ReminderForm";
+const auth = firebase.auth();
 
-const Reminders = (props) => {
+const Reminders = () => {
   const [Reminders, setReminders] = useState([]);
   const [CurrentId, setCurrentId] = useState("");
-  const query = firebase.firestore().collection(props.userDate.id);
+  const { uid, displayName } = auth.currentUser;
+  const query = firebase.firestore().collection(uid);
 
   const addOrEditReminders = async (reminderObject) => {
     if (CurrentId === "") {
@@ -70,13 +73,10 @@ const Reminders = (props) => {
     <div className="container p-4">
       <div className="row d-flex justify-content-center">
         <div className="col-lg-6 col-12 mb-5">
-          <ReminderForm
-            userDate={props.userDate}
-            {...{ addOrEditReminders, CurrentId, Reminders }}
-          />
+          <ReminderForm {...{ addOrEditReminders, CurrentId, Reminders }} />
         </div>
         <div className="col-lg-6 col-12">
-          <h2 className="titleNameUser">Reminders of {props.userDate.name}</h2>
+          <h2 className="titleNameUser">Reminders of {displayName}</h2>
           {Reminders.map((reminder) => (
             <div className="linkContainer mb-3" key={reminder.id}>
               <h3>{reminder.name}</h3>

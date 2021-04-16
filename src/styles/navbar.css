@@ -61,12 +61,20 @@
 }
 
 @media screen and (max-width: 767px) {
+  .navigation .logo div {
+    display: flex;
+    width: 80px;
+    height: 100%;
+    margin-left: 20px;
+    align-items: center;
+  }
+
   .containerLogout {
     width: 100px;
     margin-right: 20px;
   }
 
   .containerLogout img {
-    padding-right: 10px;
+    margin-right: 10px;
   }
 }
